@@ -1,10 +1,9 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date: 27.10.24
 
 ## AIM
 To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
-## ENTITY RELATIONSHIP DIAGRAM
 
 
 
@@ -23,12 +22,33 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+...
+admin.py
+
+from django.contrib import admin
+from.models import Bankloan,BankloanAdmin
+admin.site.register(Bankloan,BankloanAdmin)
+
+models.py
+from django.db import models
+from django.contrib import admin
+class Bankloan(models.Model):
+  date_of_birth=models.CharField(max_length=50,primary_key="date_of_birth")
+  fathers_name=models.CharField(max_length=70)
+  age=models.IntegerField()
+  customerid=models.IntegerField()
+  accountdetails=models.IntegerField()
+
+
+class BankloanAdmin(admin.ModelAdmin):
+ list_display=('date_of_birth','fathers_name','age','customerid','accountdetails')
+
+...
 
 
 
 ## OUTPUT
-
-Include the screenshot of your admin page.
+![alt text](<Screenshot (3).png>)
 
 
 ## RESULT
